@@ -1,0 +1,69 @@
+<!-- <div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Personas</h3>
+        </div>
+        <div class="card-body">
+
+        </div>
+    </div>
+</div> -->
+<app-toolbar></app-toolbar>
+<app-botones></app-botones>
+<div class="content" role="main">
+
+    <form [formGroup]="addressForm" novalidate #f="ngForm">
+        <mat-card class="shipping-card">
+            <mat-card-header>
+                <mat-card-title style="text-align: center;">Agregar Información</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input [(ngModel)]="person.firstName" matInput placeholder="Nombres" formControlName="firstName" autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input [(ngModel)]="person.lastName" matInput placeholder="Apellidos" formControlName="lastName" autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input [(ngModel)]="person.email" matInput placeholder="Email" formControlName="email" autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input [(ngModel)]="person.password" matInput placeholder="Password" formControlName="password" autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!--      <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input [(ngModel)]="person.roles" matInput placeholder="Roles" formControlName="roles" autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                </div> -->
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="accent" (click)="save()" [disabled]="f.invalid">Agregar</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+
+</div>

@@ -1,0 +1,35 @@
+<app-toolbar></app-toolbar>
+<app-botones></app-botones>
+<div class="content" role="main">
+
+    <form [formGroup]="addressForm" novalidate #f="ngForm">
+        <mat-card class="shipping-card">
+            <mat-card-header>
+                <mat-card-title style="text-align: center;">Editar Información</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input [(ngModel)]="person.firstName" name="firstName" matInput placeholder="Nombres" formControlName="firstName" autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input [(ngModel)]="person.lastName" name="lastName" matInput placeholder="Apellidos" formControlName="lastName" autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="accent" (click)="actualizar(person)" [disabled]="f.invalid">Actualizar</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+
+</div>
